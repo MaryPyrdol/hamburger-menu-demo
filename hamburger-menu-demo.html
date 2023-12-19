@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hamburger Menu Demo</title>
+        <style>
+            /* Big Screen CSS*/
+            /*Wrapper*/
+            #hamnav{
+                width:100%;
+                background-color:pink;
+            }
+            /* Hide Hamburger Icon*/
+            #hamnav label, #hamburger{display:none;}
+            /* Menu items */
+            #ham-items{display:flex;}
+            #ham-items a{
+                padding: 1vw;
+                color:green;
+                text-decoration:none;
+                text-align:center;
+                flex-grow:1;
+                flex-basis:0;
+                font-weight:bold;
+            }
+            #ham-items a:hover{background-color:purple;}
+            /* Small Screens */
+            @media screen and (max-width:786px){
+            /* Break into vertical menu */
+            #ham-items{display:block;}
+            #ham-items a{
+                display:block;
+                width:100%;
+                box-sizing:border-box;
+                border-top:1px solid #fff;
+                font-weight:bold;
+            }
+            /* Show Hamburger Icon */
+            #hamnav label{
+                display:inline-block;
+                color:green;
+                background:red;
+                font-size:1.2em;
+                padding:1vw;
+            }
+            /* Hide/collapse menu items for the default look */
+            #ham-items{display:none;}
+            #hamnav input:checked ~ #ham-items{display:block;}
+            }
+        </style>
+    </head>
+    <body>
+         <!-- Hamburger Menu -->
+        <nav id="hamnav">
+         <!-- Hamburger Icon -->
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger"/>
+            <div id="ham-items">
+                <a href="#">About Me</a>
+                <a href="#">Contact Me</a>
+                <a href="#">Portfolio</a>
+            </div>
+        </nav>
+    </body>
+</html>
